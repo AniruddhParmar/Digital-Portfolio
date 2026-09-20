@@ -1,7 +1,11 @@
 # CHANGELOG — Aniruddh Parmar Portfolio
 
 ## v1.3.0 — 2026-09-20 · "The Shipment" redesign
-
+### Domain
+- Default domain changed: `aniruddhprmr.com` → `aniruddhparmar.arceedeximhouse.com`
+- Cloudflare: CNAME `aniruddhparmar` → `aniruddhprmr.github.io`, proxied
+- GitHub Pages: custom domain set to `aniruddhparmar.arceedeximhouse.com`, HTTPS provisioned
+- All SEO (canonical, OG, Twitter, JSON-LD, robots.txt, sitemap.xml) updated to new domain
 ### Concept
 Scrolling the page follows a shipment: **Origin (Kutch) → Manifest → Port → Customs → Delivered.**
 A journey rail on the right (desktop) tracks the "cargo" as you scroll; routes draw themselves on the About and Contact sections.
