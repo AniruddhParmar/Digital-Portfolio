@@ -458,7 +458,7 @@ html:not(.js) .p2,html:not(.js) .p3{display:none}
 <section class="scene" id="scene" aria-label="Introduction">
   <div class="stick" id="stick" data-tone="light">
     <div class="fallback" aria-hidden="true"></div>
-    <video id="vid" muted playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
+    <video id="vid" muted playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
     <canvas id="cv" width="1920" height="1080" aria-hidden="true"></canvas>
 
     <div class="phase p1" id="ph1">
@@ -812,7 +812,19 @@ function initVideo(){
   vid.addEventListener('durationchange', onMeta);
   vid.src = CONFIG.VIDEO_SRC;
   vid.load();
-
+/* ── mobile: size the canvas to the viewport instead of 1920×1080 ── */
+  function fitCanvas(){
+    var w = window.innerWidth, h = window.innerHeight;
+    var maxW = 1280;
+    var cw = Math.min(w, maxW);
+    var ch = Math.round(cw * (h / w));
+    if(cv.width !== cw || cv.height !== ch){
+      cv.width = cw; cv.height = ch;
+    }
+  }
+  fitCanvas();
+  window.addEventListener('resize', fitCanvas, { passive: true });
+  
   /* ---------- frame bank helpers ---------- */
   function nearestIndex(t){
     var tt = t * 1e6, lo = 0, hi = bank.length - 1;
