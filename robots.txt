@@ -1,0 +1,7 @@
+# robots.txt — Aniruddh Parmar Portfolio
+# https://aniruddhprmr.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aniruddhprmr.com/sitemap.xml
