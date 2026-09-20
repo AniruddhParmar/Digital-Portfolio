@@ -1,7 +1,7 @@
 # robots.txt — Aniruddh Parmar Portfolio
-# https://aniruddhprmr.com
+# https://aniruddhparmar.arceedeximhouse.com
 
 User-agent: *
 Allow: /
 
-Sitemap: https://aniruddhprmr.com/sitemap.xml
+Sitemap: https://aniruddhparmar.arceedeximhouse.com/sitemap.xml
