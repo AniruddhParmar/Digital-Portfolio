@@ -580,7 +580,7 @@ html:not(.js) .p2,html:not(.js) .p3{display:none}
       <div class="led-r"><span class="n" data-count="5" data-suffix="+">5<sup>+</sup></span><span class="l">Years experience</span></div>
       <div class="led-r"><span class="n" data-count="416">416<sup>+</sup></span><span class="l">Network</span></div>
       <div class="led-r"><span class="n" data-count="377">377<sup>+</sup></span><span class="l">Networth</span></div>
-      <div class="led-r"><span class="n" data-count="5">3<sup>+</sup></span><span class="l">Business & Staartups</span></div>
+      <div class="led-r"><span class="n" data-count="3">3<sup>+</sup></span><span class="l">Business & Staartups</span></div>
     </div>
   </div>
 </section>
@@ -825,6 +825,14 @@ function initVideo(){
   fitCanvas();
   window.addEventListener('resize', fitCanvas, { passive: true });
   
+  /* ── small screens: skip the heavy MP4, let the gradient fallback show ── */
+  if(innerWidth < 820){
+    vid.removeAttribute('src');
+    vid.load();
+    vid.style.display = 'none';
+    cv.style.display = 'none';
+    root.classList.remove('has-video');
+  }
   /* ---------- frame bank helpers ---------- */
   function nearestIndex(t){
     var tt = t * 1e6, lo = 0, hi = bank.length - 1;
