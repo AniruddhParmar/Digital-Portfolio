@@ -117,11 +117,11 @@ ul,ol{list-style:none}
 .skip:focus{top:1rem}
 
 /* paper grain */
-body::before{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.045;
+body::before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.045;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* scroll progress bar */
-.pbar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:120;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--bronze-d),var(--bronze-l))}
+.pbar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:120;transition:transform .12s linear;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--bronze-d),var(--bronze-l))}
 
 /* ═════════ TYPE ═════════ */
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.015em}
@@ -380,8 +380,8 @@ html:not(.js) .p2,html:not(.js) .p3{display:none}
 .foot nav a:hover{color:var(--bronze-l);border-color:var(--bronze-l)}
 
 /* ═════════ JOURNEY RAIL ═════════ */
-.rail{position:fixed;right:1.1rem;top:50%;z-index:90;height:min(46vh,380px);transform:translateY(-50%);display:none;opacity:0;pointer-events:none;transition:opacity .5s}
-.rail.show{opacity:1;pointer-events:auto}
+.rail{position:fixed;right:1.1rem;top:50%;z-index:110;height:min(46vh,380px);transform:translateY(-50%);display:none;opacity:0;pointer-events:none;transition:opacity .5s}
+.rail.show{opacity:1;pointer-events:auto;display:flex}
 .rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(138,106,46,.35)}
 .rail-f{position:absolute;left:50%;top:0;width:1px;height:100%;background:var(--bronze-d);transform-origin:0 0;transform:scaleY(0)}
 .rail a{position:absolute;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;display:grid;place-items:center}
